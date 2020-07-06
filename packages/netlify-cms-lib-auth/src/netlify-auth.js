@@ -52,7 +52,7 @@ class Authenticator {
 
   authorizeCallback(options, cb) {
     const fn = e => {
-      if (e.origin !== this.base_url) {
+      if (e.origin !== new URL(this.base_url).origin) {
         return;
       }
 
